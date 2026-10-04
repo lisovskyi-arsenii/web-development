@@ -1,0 +1,52 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+body {
+  width: 100%;
+  max-width: $page-width;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 39px clamp(16px, 8.3334vw, #{$page-padding}) 0;
+  background: $color-page-bg;
+  box-shadow: 0 0 8px $color-page-shadow;
+
+  @include mobile {
+    width: 100%;
+    padding: 16px 16px 0;
+    box-shadow: none;
+  }
+}
+
+main > section {
+  padding-bottom: $section-padding-bottom;
+
+  &::before {
+    content: "";
+    display: block;
+    width: $divider-width;
+    max-width: 100%;
+    height: 1px;
+    margin: 0 auto 28px;
+    background: $color-divider;
+  }
+
+  h2 {
+    margin-bottom: 37px;
+  }
+}
+
+#favorites {
+  padding-bottom: 59px;
+}
+
+#statistics {
+  padding-bottom: 40px;
+
+  h2 {
+    margin-bottom: 41px;
+  }
+}
+
+#teachers .filter-section {
+  margin-bottom: 60px;
+}

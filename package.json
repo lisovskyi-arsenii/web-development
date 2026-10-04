@@ -1,0 +1,11 @@
+{
+  "name": "lab01-lisovskyi",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "sass": "sass --watch src/scss/main.scss:src/css/style.css"
+  },
+  "devDependencies": {
+    "sass": "^1.80.0"
+  }
+}

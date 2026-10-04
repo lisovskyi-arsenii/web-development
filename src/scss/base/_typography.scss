@@ -1,0 +1,23 @@
+@use "../abstracts/variables" as *;
+
+html {
+  background: $color-body-bg;
+}
+
+body {
+  font-family: $font-main;
+  font-size: $fs-body;
+  line-height: 1.4;
+  color: $color-text;
+}
+
+h2 {
+  font-size: $fs-h2;
+  font-weight: $fw-bold;
+  line-height: 48px;
+  text-align: center;
+}
+
+h3 {
+  font-weight: $fw-regular;
+}

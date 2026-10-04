@@ -1,0 +1,49 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.favorites-carousel {
+  position: relative;
+}
+
+.favorites-cards .teacher-card-country {
+  margin-top: 14px;
+}
+
+.favorites-arrow {
+  position: absolute;
+  top: 96px;
+  width: $arrow-width;
+  height: $arrow-height;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  font-size: 0;
+  color: transparent;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 64'%3E%3Cpolyline points='17,2 3,32 17,62' fill='none' stroke='%237e7e7e' stroke-width='3'/%3E%3C/svg%3E") center / contain no-repeat;
+  transition: opacity 0.2s;
+
+  &:hover {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 64'%3E%3Cpolyline points='17,2 3,32 17,62' fill='none' stroke='%23161616' stroke-width='3'/%3E%3C/svg%3E");
+  }
+
+  @include mobile {
+    top: 70px;
+  }
+}
+
+.favorites-arrow-prev {
+  left: -60px;
+
+  @include mobile {
+    left: -10px;
+  }
+}
+
+.favorites-arrow-next {
+  right: -60px;
+  transform: scaleX(-1);
+
+  @include mobile {
+    right: -10px;
+  }
+}
