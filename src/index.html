@@ -1,0 +1,964 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Teachinder</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <header>
+            <section class="top-header">
+                <h1>Teachinder</h1>
+                <form role="search">
+                    <input
+                        type="search"
+                        placeholder="Name, note or age to search"
+                        aria-label="Search criteria"
+                    />
+                    <button type="submit" name="search-btn">Search</button>
+                </form>
+            </section>
+            <section class="bottom-header">
+                <nav>
+                    <ul>
+                        <li><a href="#teachers">Teachers</a></li>
+                        <li><a href="#statistics">Statistics</a></li>
+                        <li><a href="#favorites">Favorites</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                    <a href="#add-teacher-popup" class="add-teacher-btn"
+                        >Add teacher</a
+                    >
+                </nav>
+            </section>
+        </header>
+
+        <main>
+            <section id="teachers">
+                <h2>Top Teachers</h2>
+                <div class="filter-section">
+                    <label for="age">Age</label>
+                    <select id="age">
+                        <option value="18-31">18-31</option>
+                    </select>
+
+                    <label for="region">Region</label>
+                    <select id="region">
+                        <option value="europe">Europe</option>
+                    </select>
+
+                    <label for="sex">Sex</label>
+                    <select id="sex">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+
+                    <label for="only-photo">
+                        <input type="checkbox" id="only-photo" />
+                        Only with photo
+                    </label>
+
+                    <label for="only-favorites">
+                        <input type="checkbox" id="only-favorites" />
+                        Only favorites
+                    </label>
+                </div>
+
+                <div class="teacher-cards">
+                    <div class="teacher-card">
+                        <div class="avatar-container">
+                            <img
+                                class="teacher-card-profile"
+                                src="img/teachers/1.jpg"
+                                alt="Profile of Ihor Tkachuk"
+                            />
+                        </div>
+                        <h3 class="teacher-card-name">
+                            <a href="#teacher-ihor-tkachuk">Ihor Tkachuk</a>
+                        </h3>
+                        <p class="teacher-card-subject">Chemistry</p>
+                        <p class="teacher-card-country">Ukraine</p>
+                    </div>
+                    <div class="teacher-card">
+                        <div class="avatar-container">
+                            <img
+                                class="teacher-card-profile"
+                                src="img/teachers/2.jpg"
+                                alt="Profile of Pragg Rameshbabu"
+                            />
+                        </div>
+                        <h3 class="teacher-card-name">
+                            <a href="#teacher-pragg-rameshbabu"
+                                >Pragg Rameshbabu</a
+                            >
+                        </h3>
+                        <p class="teacher-card-subject">Chess</p>
+                        <p class="teacher-card-country">India</p>
+                    </div>
+                    <div class="teacher-card favorite-card">
+                        <div class="avatar-container">
+                            <img
+                                class="teacher-card-profile"
+                                src="img/teachers/3.jpg"
+                                alt="Profile of Floor Jansen"
+                            />
+                            <img
+                                class="teacher-card-star"
+                                src="img/star.svg"
+                                alt="Favorite"
+                            />
+                        </div>
+                        <h3 class="teacher-card-name">
+                            <a href="#teacher-floor-jansen">Floor Jansen</a>
+                        </h3>
+                        <p class="teacher-card-subject">Vocal</p>
+                        <p class="teacher-card-country">Denmark</p>
+                    </div>
+                    <div class="teacher-card">
+                        <div class="avatar-container">
+                            <img
+                                class="teacher-card-profile"
+                                src="img/teachers/4.jpg"
+                                alt="Profile of John Burke"
+                            />
+                        </div>
+                        <h3 class="teacher-card-name">
+                            <a href="#teacher-john-burke">John Burke</a>
+                        </h3>
+                        <p class="teacher-card-subject">Computer Science</p>
+                        <p class="teacher-card-country">Belgium</p>
+                    </div>
+                    <div class="teacher-card favorite-card">
+                        <div class="avatar-container">
+                            <img
+                                class="teacher-card-profile"
+                                src="img/teachers/5.jpg"
+                                alt="Profile of Ari Tang"
+                            />
+                            <img
+                                class="teacher-card-star"
+                                src="img/star.svg"
+                                alt="Favorite"
+                            />
+                        </div>
+                        <h3 class="teacher-card-name">
+                            <a href="#teacher-ari-tang">Ari Tang</a>
+                        </h3>
+                        <p class="teacher-card-subject">Biology</p>
+                        <p class="teacher-card-country">China</p>
+                    </div>
+                    <div class="teacher-card">
+                        <div class="avatar-container">
+                            <img
+                                class="teacher-card-profile"
+                                src="img/teachers/6.jpg"
+                                alt="Profile of Rachel Andrew"
+                            />
+                        </div>
+                        <h3 class="teacher-card-name">
+                            <a href="#teacher-rachel-andrew">Rachel Andrew</a>
+                        </h3>
+                        <p class="teacher-card-subject">Medicine</p>
+                        <p class="teacher-card-country">UK</p>
+                    </div>
+                    <div class="teacher-card">
+                        <div class="avatar-container">
+                            <div class="teacher-initials">A.M</div>
+                        </div>
+                        <h3 class="teacher-card-name">
+                            <a href="#teacher-anna-muzychuk">Anna Muzychuk</a>
+                        </h3>
+                        <p class="teacher-card-subject">Chess</p>
+                        <p class="teacher-card-country">Belarus</p>
+                    </div>
+                    <div class="teacher-card">
+                        <div class="avatar-container">
+                            <div class="teacher-initials">R.L</div>
+                        </div>
+                        <h3 class="teacher-card-name">
+                            <a href="#teacher-radoslaw-ljuboevic"
+                                >Radoslaw Ljuboevic</a
+                            >
+                        </h3>
+                        <p class="teacher-card-subject">Physics</p>
+                        <p class="teacher-card-country">Poland</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="statistics">
+                <h2>Statistics</h2>
+                <table class="statistics-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Speciality</th>
+                            <th>Age</th>
+                            <th>Gender</th>
+                            <th>Nationality</th>
+                        </tr>
+                    </thead>
+                    <tbody id="statistics-body">
+                        <tr>
+                            <td>Daisy Alexander</td>
+                            <td>Chemistry</td>
+                            <td>28</td>
+                            <td>Female</td>
+                            <td>Vietnam</td>
+                        </tr>
+                        <tr>
+                            <td>Julia Bradley</td>
+                            <td>Math</td>
+                            <td>26</td>
+                            <td>Female</td>
+                            <td>USA</td>
+                        </tr>
+                        <tr>
+                            <td>Rita Hart</td>
+                            <td>Art</td>
+                            <td>41</td>
+                            <td>Female</td>
+                            <td>Ireland</td>
+                        </tr>
+                        <tr>
+                            <td>Jonathan Jacobs</td>
+                            <td>Math</td>
+                            <td>32</td>
+                            <td>Male</td>
+                            <td>England</td>
+                        </tr>
+                        <tr>
+                            <td>Nathaniel White</td>
+                            <td>Computer Science</td>
+                            <td>37</td>
+                            <td>Male</td>
+                            <td>Austria</td>
+                        </tr>
+                        <tr>
+                            <td>Frank Medina</td>
+                            <td>English</td>
+                            <td>43</td>
+                            <td>Male</td>
+                            <td>Italy</td>
+                        </tr>
+                        <tr>
+                            <td>Ella Curtis</td>
+                            <td>Chess</td>
+                            <td>34</td>
+                            <td>Female</td>
+                            <td>USA</td>
+                        </tr>
+                        <tr>
+                            <td>Claire Simmmons</td>
+                            <td>Art</td>
+                            <td>38</td>
+                            <td>Female</td>
+                            <td>Netherlands</td>
+                        </tr>
+                        <tr>
+                            <td>Benjamin Knight</td>
+                            <td>Biology</td>
+                            <td>44</td>
+                            <td>Male</td>
+                            <td>Scotland</td>
+                        </tr>
+                        <tr>
+                            <td>Norma Rose</td>
+                            <td>Statistics</td>
+                            <td>36</td>
+                            <td>Female</td>
+                            <td>France</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <nav class="pagination" aria-label="Pagination">
+                    <ul>
+                        <li><span aria-current="page">1</span></li>
+                        <li><a href="#statistics">2</a></li>
+                        <li><a href="#statistics">3</a></li>
+                        <li><span>...</span></li>
+                        <li><a href="#statistics">Last</a></li>
+                    </ul>
+                </nav>
+            </section>
+
+            <section id="favorites">
+                <h2>Favorites</h2>
+                <div class="favorites-carousel">
+                    <button
+                        type="button"
+                        class="favorites-arrow favorites-arrow-prev"
+                        aria-label="Previous"
+                    >
+                        &#10094;
+                    </button>
+                    <div class="teacher-cards favorites-cards">
+                        <div class="teacher-card">
+                            <div class="avatar-container">
+                                <img
+                                    class="teacher-card-profile"
+                                    src="img/teachers/1.jpg"
+                                    alt="Profile of Ihor Tkachuk"
+                                />
+                            </div>
+                            <h3 class="teacher-card-name">
+                                <a href="#teacher-ihor-tkachuk">Ihor Tkachuk</a>
+                            </h3>
+                            <p class="teacher-card-country">Ukraine</p>
+                        </div>
+                        <div class="teacher-card">
+                            <div class="avatar-container">
+                                <div class="teacher-initials">A.M</div>
+                            </div>
+                            <h3 class="teacher-card-name">
+                                <a href="#teacher-anna-makarevich"
+                                    >Anna Makarevich</a
+                                >
+                            </h3>
+                            <p class="teacher-card-country">Belarus</p>
+                        </div>
+                        <div class="teacher-card">
+                            <div class="avatar-container">
+                                <img
+                                    class="teacher-card-profile"
+                                    src="img/teachers/4.jpg"
+                                    alt="Profile of John Burke"
+                                />
+                            </div>
+                            <h3 class="teacher-card-name">
+                                <a href="#teacher-john-burke">John Burke</a>
+                            </h3>
+                            <p class="teacher-card-country">Belgium</p>
+                        </div>
+                        <div class="teacher-card">
+                            <div class="avatar-container">
+                                <img
+                                    class="teacher-card-profile"
+                                    src="img/teachers/5.jpg"
+                                    alt="Profile of Ari Tang"
+                                />
+                            </div>
+                            <h3 class="teacher-card-name">
+                                <a href="#teacher-ari-tang">Ari Tang</a>
+                            </h3>
+                            <p class="teacher-card-country">China</p>
+                        </div>
+                        <div class="teacher-card">
+                            <div class="avatar-container">
+                                <img
+                                    class="teacher-card-profile"
+                                    src="img/teachers/3.jpg"
+                                    alt="Profile of Floor Jansen"
+                                />
+                            </div>
+                            <h3 class="teacher-card-name">
+                                <a href="#teacher-floor-jansen">Floor Jansen</a>
+                            </h3>
+                            <p class="teacher-card-country">Denmark</p>
+                        </div>
+                    </div>
+                    <button
+                        type="button"
+                        class="favorites-arrow favorites-arrow-next"
+                        aria-label="Next"
+                    >
+                        &#10095;
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <footer id="about">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A
+                atque facere, hic impedit itaque molestiae sit tempore? Ea in
+                mollitia natus rerum voluptates. Ea ex excepturi facere tempora.
+                Aliquid asperiores hic impedit iusto natus quaerat ratione sit?
+                Culpa iusto optio voluptas voluptate. Enim eveniet fugit iure
+                maiores molestiae, praesentium quia.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Aliquam eligendi illum in inventore ipsum odio officiis omnis
+                quisquam sed tempora?
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A
+                atque esse expedita id iusto mollitia, odit sint ullam veritatis
+                vero?
+            </p>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#teachers">Teachers</a></li>
+                    <li><a href="#statistics">Statistics</a></li>
+                    <li><a href="#favorites">Favorites</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+                <a href="#add-teacher-popup" class="add-teacher-btn"
+                    >Add teacher</a
+                >
+            </nav>
+        </footer>
+
+        <div
+            class="popup"
+            id="add-teacher-popup"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="add-teacher-title"
+        >
+            <a href="#close" class="popup-backdrop" aria-label="Close"></a>
+            <div class="popup-window">
+                <div class="popup-header">
+                    <h2 id="add-teacher-title">Add Teacher</h2>
+                    <a href="#close" class="popup-close" aria-label="Close"
+                        >&times;</a
+                    >
+                </div>
+                <form class="add-teacher-form">
+                    <label for="teacher-name">Name</label>
+                    <input
+                        type="text"
+                        id="teacher-name"
+                        name="name"
+                        placeholder="Enter name"
+                    />
+
+                    <label for="teacher-speciality">Speciality</label>
+                    <select id="teacher-speciality" name="speciality">
+                        <option value="mathematics">Mathematics</option>
+                        <option value="chemistry">Chemistry</option>
+                        <option value="biology">Biology</option>
+                        <option value="physics">Physics</option>
+                        <option value="chess">Chess</option>
+                        <option value="vocal">Vocal</option>
+                        <option value="computer-science">
+                            Computer Science
+                        </option>
+                        <option value="medicine">Medicine</option>
+                    </select>
+
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="teacher-country">Country</label>
+                            <select id="teacher-country" name="country">
+                                <option value="ukraine">Ukraine</option>
+                                <option value="poland">Poland</option>
+                                <option value="belgium">Belgium</option>
+                                <option value="denmark">Denmark</option>
+                            </select>
+                        </div>
+                        <div class="form-field">
+                            <label for="teacher-city">City</label>
+                            <input type="text" id="teacher-city" name="city" />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="teacher-email">Email</label>
+                            <input
+                                type="email"
+                                id="teacher-email"
+                                name="email"
+                            />
+                        </div>
+                        <div class="form-field">
+                            <label for="teacher-phone">Phone</label>
+                            <input type="tel" id="teacher-phone" name="phone" />
+                        </div>
+                    </div>
+
+                    <label for="teacher-birth">Date of birth</label>
+                    <input type="date" id="teacher-birth" name="birth" />
+
+                    <fieldset class="sex-field">
+                        <legend>Sex</legend>
+                        <label for="sex-male">Male</label>
+                        <input
+                            type="radio"
+                            id="sex-male"
+                            name="sex"
+                            value="male"
+                        />
+                        <label for="sex-female">Female</label>
+                        <input
+                            type="radio"
+                            id="sex-female"
+                            name="sex"
+                            value="female"
+                        />
+                    </fieldset>
+
+                    <div class="color-field">
+                        <label for="teacher-color">Background color</label>
+                        <input type="color" id="teacher-color" name="color" />
+                    </div>
+
+                    <label for="teacher-notes">Notes (optional)</label>
+                    <textarea
+                        id="teacher-notes"
+                        name="notes"
+                        rows="5"
+                    ></textarea>
+
+                    <button type="submit" class="add-btn">Add</button>
+                </form>
+            </div>
+        </div>
+
+        <div
+            class="popup popup-info"
+            id="teacher-ihor-tkachuk"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="teacher-ihor-tkachuk-title"
+        >
+            <a href="#close" class="popup-backdrop" aria-label="Close"></a>
+            <div class="popup-window">
+                <div class="popup-header">
+                    <h2 id="teacher-ihor-tkachuk-title">Teacher Info</h2>
+                    <a href="#close" class="popup-close" aria-label="Close"
+                        >&times;</a
+                    >
+                </div>
+                <div class="teacher-info">
+                    <img
+                        class="teacher-info-photo"
+                        src="img/teachers/1-large.jpg"
+                        alt="Profile of Ihor Tkachuk"
+                    />
+                    <div class="teacher-info-details">
+                        <h3 class="teacher-info-name">Ihor Tkachuk</h3>
+                        <img
+                            class="teacher-info-star"
+                            src="img/star.svg"
+                            alt="Add to favorites"
+                        />
+                        <p class="teacher-info-subject">Chemistry</p>
+                        <p>Kyiv, Ukraine</p>
+                        <p>35, Male</p>
+                        <a href="mailto:ihor_tkachuk@domain.com"
+                            >ihor_tkachuk@domain.com</a
+                        >
+                        <p><a href="tel:+380964993252">+380964993252</a></p>
+                    </div>
+                    <p class="teacher-info-notes">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Ab autem consectetur culpa cumque, distinctio
+                        dolor dolore dolorem doloremque ea explicabo facilis nam
+                        nesciunt nisi pariatur perspiciatis porro quis similique
+                        temporibus veniam veritatis? A ab ad, aliquam amet
+                        consequatur cupiditate debitis deserunt doloribus
+                        dolorum earum eius eos minus nostrum odit omnis
+                        perferendis...
+                    </p>
+                    <button type="button" class="toggle-map">toggle map</button>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="popup popup-info"
+            id="teacher-pragg-rameshbabu"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="teacher-pragg-rameshbabu-title"
+        >
+            <a href="#close" class="popup-backdrop" aria-label="Close"></a>
+            <div class="popup-window">
+                <div class="popup-header">
+                    <h2 id="teacher-pragg-rameshbabu-title">Teacher Info</h2>
+                    <a href="#close" class="popup-close" aria-label="Close"
+                        >&times;</a
+                    >
+                </div>
+                <div class="teacher-info">
+                    <img
+                        class="teacher-info-photo"
+                        src="img/teachers/2-large.jpg"
+                        alt="Profile of Pragg Rameshbabu"
+                    />
+                    <div class="teacher-info-details">
+                        <h3 class="teacher-info-name">Pragg Rameshbabu</h3>
+                        <img
+                            class="teacher-info-star"
+                            src="img/star.svg"
+                            alt="Add to favorites"
+                        />
+                        <p class="teacher-info-subject">Chess</p>
+                        <p>Chennai, India</p>
+                        <p>19, Male</p>
+                        <a href="mailto:pragg_rameshbabu@domain.com"
+                            >pragg_rameshbabu@domain.com</a
+                        >
+                        <p><a href="tel:+919840123456">+919840123456</a></p>
+                    </div>
+                    <p class="teacher-info-notes">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Ab autem consectetur culpa cumque, distinctio
+                        dolor dolore dolorem doloremque ea explicabo facilis nam
+                        nesciunt nisi pariatur perspiciatis porro quis similique
+                        temporibus veniam veritatis? A ab ad, aliquam amet
+                        consequatur cupiditate debitis deserunt doloribus
+                        dolorum earum eius eos minus nostrum odit omnis
+                        perferendis...
+                    </p>
+                    <button type="button" class="toggle-map">toggle map</button>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="popup popup-info"
+            id="teacher-floor-jansen"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="teacher-floor-jansen-title"
+        >
+            <a href="#close" class="popup-backdrop" aria-label="Close"></a>
+            <div class="popup-window">
+                <div class="popup-header">
+                    <h2 id="teacher-floor-jansen-title">Teacher Info</h2>
+                    <a href="#close" class="popup-close" aria-label="Close"
+                        >&times;</a
+                    >
+                </div>
+                <div class="teacher-info">
+                    <img
+                        class="teacher-info-photo"
+                        src="img/teachers/3-large.jpg"
+                        alt="Profile of Floor Jansen"
+                    />
+                    <div class="teacher-info-details">
+                        <h3 class="teacher-info-name">Floor Jansen</h3>
+                        <img
+                            class="teacher-info-star is-active"
+                            src="img/star.svg"
+                            alt="Favorite"
+                        />
+                        <p class="teacher-info-subject">Vocal</p>
+                        <p>Aarschot, Denmark</p>
+                        <p>41, Female</p>
+                        <a href="mailto:floor_jansen@domain.com"
+                            >floor_jansen@domain.com</a
+                        >
+                        <p><a href="tel:+4531234567">+4531234567</a></p>
+                    </div>
+                    <p class="teacher-info-notes">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Ab autem consectetur culpa cumque, distinctio
+                        dolor dolore dolorem doloremque ea explicabo facilis nam
+                        nesciunt nisi pariatur perspiciatis porro quis similique
+                        temporibus veniam veritatis? A ab ad, aliquam amet
+                        consequatur cupiditate debitis deserunt doloribus
+                        dolorum earum eius eos minus nostrum odit omnis
+                        perferendis...
+                    </p>
+                    <button type="button" class="toggle-map">toggle map</button>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="popup popup-info"
+            id="teacher-john-burke"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="teacher-john-burke-title"
+        >
+            <a href="#close" class="popup-backdrop" aria-label="Close"></a>
+            <div class="popup-window">
+                <div class="popup-header">
+                    <h2 id="teacher-john-burke-title">Teacher Info</h2>
+                    <a href="#close" class="popup-close" aria-label="Close"
+                        >&times;</a
+                    >
+                </div>
+                <div class="teacher-info">
+                    <img
+                        class="teacher-info-photo"
+                        src="img/teachers/4-large.jpg"
+                        alt="Profile of John Burke"
+                    />
+                    <div class="teacher-info-details">
+                        <h3 class="teacher-info-name">John Burke</h3>
+                        <img
+                            class="teacher-info-star"
+                            src="img/star.svg"
+                            alt="Add to favorites"
+                        />
+                        <p class="teacher-info-subject">Computer Science</p>
+                        <p>Brussels, Belgium</p>
+                        <p>29, Male</p>
+                        <a href="mailto:john_burke@domain.com"
+                            >john_burke@domain.com</a
+                        >
+                        <p><a href="tel:+3225551234">+3225551234</a></p>
+                    </div>
+                    <p class="teacher-info-notes">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Ab autem consectetur culpa cumque, distinctio
+                        dolor dolore dolorem doloremque ea explicabo facilis nam
+                        nesciunt nisi pariatur perspiciatis porro quis similique
+                        temporibus veniam veritatis? A ab ad, aliquam amet
+                        consequatur cupiditate debitis deserunt doloribus
+                        dolorum earum eius eos minus nostrum odit omnis
+                        perferendis...
+                    </p>
+                    <button type="button" class="toggle-map">toggle map</button>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="popup popup-info"
+            id="teacher-ari-tang"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="teacher-ari-tang-title"
+        >
+            <a href="#close" class="popup-backdrop" aria-label="Close"></a>
+            <div class="popup-window">
+                <div class="popup-header">
+                    <h2 id="teacher-ari-tang-title">Teacher Info</h2>
+                    <a href="#close" class="popup-close" aria-label="Close"
+                        >&times;</a
+                    >
+                </div>
+                <div class="teacher-info">
+                    <img
+                        class="teacher-info-photo"
+                        src="img/teachers/5-large.jpg"
+                        alt="Profile of Ari Tang"
+                    />
+                    <div class="teacher-info-details">
+                        <h3 class="teacher-info-name">Ari Tang</h3>
+                        <img
+                            class="teacher-info-star is-active"
+                            src="img/star.svg"
+                            alt="Favorite"
+                        />
+                        <p class="teacher-info-subject">Biology</p>
+                        <p>Beijing, China</p>
+                        <p>27, Female</p>
+                        <a href="mailto:ari_tang@domain.com"
+                            >ari_tang@domain.com</a
+                        >
+                        <p><a href="tel:+861012345678">+861012345678</a></p>
+                    </div>
+                    <p class="teacher-info-notes">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Ab autem consectetur culpa cumque, distinctio
+                        dolor dolore dolorem doloremque ea explicabo facilis nam
+                        nesciunt nisi pariatur perspiciatis porro quis similique
+                        temporibus veniam veritatis? A ab ad, aliquam amet
+                        consequatur cupiditate debitis deserunt doloribus
+                        dolorum earum eius eos minus nostrum odit omnis
+                        perferendis...
+                    </p>
+                    <button type="button" class="toggle-map">toggle map</button>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="popup popup-info"
+            id="teacher-rachel-andrew"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="teacher-rachel-andrew-title"
+        >
+            <a href="#close" class="popup-backdrop" aria-label="Close"></a>
+            <div class="popup-window">
+                <div class="popup-header">
+                    <h2 id="teacher-rachel-andrew-title">Teacher Info</h2>
+                    <a href="#close" class="popup-close" aria-label="Close"
+                        >&times;</a
+                    >
+                </div>
+                <div class="teacher-info">
+                    <img
+                        class="teacher-info-photo"
+                        src="img/teachers/6-large.jpg"
+                        alt="Profile of Rachel Andrew"
+                    />
+                    <div class="teacher-info-details">
+                        <h3 class="teacher-info-name">Rachel Andrew</h3>
+                        <img
+                            class="teacher-info-star"
+                            src="img/star.svg"
+                            alt="Add to favorites"
+                        />
+                        <p class="teacher-info-subject">Medicine</p>
+                        <p>London, UK</p>
+                        <p>38, Female</p>
+                        <a href="mailto:rachel_andrew@domain.com"
+                            >rachel_andrew@domain.com</a
+                        >
+                        <p><a href="tel:+442071234567">+442071234567</a></p>
+                    </div>
+                    <p class="teacher-info-notes">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Ab autem consectetur culpa cumque, distinctio
+                        dolor dolore dolorem doloremque ea explicabo facilis nam
+                        nesciunt nisi pariatur perspiciatis porro quis similique
+                        temporibus veniam veritatis? A ab ad, aliquam amet
+                        consequatur cupiditate debitis deserunt doloribus
+                        dolorum earum eius eos minus nostrum odit omnis
+                        perferendis...
+                    </p>
+                    <button type="button" class="toggle-map">toggle map</button>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="popup popup-info"
+            id="teacher-anna-muzychuk"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="teacher-anna-muzychuk-title"
+        >
+            <a href="#close" class="popup-backdrop" aria-label="Close"></a>
+            <div class="popup-window">
+                <div class="popup-header">
+                    <h2 id="teacher-anna-muzychuk-title">Teacher Info</h2>
+                    <a href="#close" class="popup-close" aria-label="Close"
+                        >&times;</a
+                    >
+                </div>
+                <div class="teacher-info">
+                    <div class="teacher-info-photo teacher-info-initials">
+                        A.M
+                    </div>
+                    <div class="teacher-info-details">
+                        <h3 class="teacher-info-name">Anna Muzychuk</h3>
+                        <img
+                            class="teacher-info-star"
+                            src="img/star.svg"
+                            alt="Add to favorites"
+                        />
+                        <p class="teacher-info-subject">Chess</p>
+                        <p>Minsk, Belarus</p>
+                        <p>30, Female</p>
+                        <a href="mailto:anna_muzychuk@domain.com"
+                            >anna_muzychuk@domain.com</a
+                        >
+                        <p><a href="tel:+375291234567">+375291234567</a></p>
+                    </div>
+                    <p class="teacher-info-notes">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Ab autem consectetur culpa cumque, distinctio
+                        dolor dolore dolorem doloremque ea explicabo facilis nam
+                        nesciunt nisi pariatur perspiciatis porro quis similique
+                        temporibus veniam veritatis? A ab ad, aliquam amet
+                        consequatur cupiditate debitis deserunt doloribus
+                        dolorum earum eius eos minus nostrum odit omnis
+                        perferendis...
+                    </p>
+                    <button type="button" class="toggle-map">toggle map</button>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="popup popup-info"
+            id="teacher-radoslaw-ljuboevic"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="teacher-radoslaw-ljuboevic-title"
+        >
+            <a href="#close" class="popup-backdrop" aria-label="Close"></a>
+            <div class="popup-window">
+                <div class="popup-header">
+                    <h2 id="teacher-radoslaw-ljuboevic-title">Teacher Info</h2>
+                    <a href="#close" class="popup-close" aria-label="Close"
+                        >&times;</a
+                    >
+                </div>
+                <div class="teacher-info">
+                    <div class="teacher-info-photo teacher-info-initials">
+                        R.L
+                    </div>
+                    <div class="teacher-info-details">
+                        <h3 class="teacher-info-name">Radoslaw Ljuboevic</h3>
+                        <img
+                            class="teacher-info-star"
+                            src="img/star.svg"
+                            alt="Add to favorites"
+                        />
+                        <p class="teacher-info-subject">Physics</p>
+                        <p>Warsaw, Poland</p>
+                        <p>44, Male</p>
+                        <a href="mailto:radoslaw_ljuboevic@domain.com"
+                            >radoslaw_ljuboevic@domain.com</a
+                        >
+                        <p><a href="tel:+48221234567">+48221234567</a></p>
+                    </div>
+                    <p class="teacher-info-notes">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Ab autem consectetur culpa cumque, distinctio
+                        dolor dolore dolorem doloremque ea explicabo facilis nam
+                        nesciunt nisi pariatur perspiciatis porro quis similique
+                        temporibus veniam veritatis? A ab ad, aliquam amet
+                        consequatur cupiditate debitis deserunt doloribus
+                        dolorum earum eius eos minus nostrum odit omnis
+                        perferendis...
+                    </p>
+                    <button type="button" class="toggle-map">toggle map</button>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="popup popup-info"
+            id="teacher-anna-makarevich"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="teacher-anna-makarevich-title"
+        >
+            <a href="#close" class="popup-backdrop" aria-label="Close"></a>
+            <div class="popup-window">
+                <div class="popup-header">
+                    <h2 id="teacher-anna-makarevich-title">Teacher Info</h2>
+                    <a href="#close" class="popup-close" aria-label="Close"
+                        >&times;</a
+                    >
+                </div>
+                <div class="teacher-info">
+                    <div class="teacher-info-photo teacher-info-initials">
+                        A.M
+                    </div>
+                    <div class="teacher-info-details">
+                        <h3 class="teacher-info-name">Anna Makarevich</h3>
+                        <img
+                            class="teacher-info-star"
+                            src="img/star.svg"
+                            alt="Add to favorites"
+                        />
+                        <p class="teacher-info-subject">Art</p>
+                        <p>Minsk, Belarus</p>
+                        <p>33, Female</p>
+                        <a href="mailto:anna_makarevich@domain.com"
+                            >anna_makarevich@domain.com</a
+                        >
+                        <p><a href="tel:+375297654321">+375297654321</a></p>
+                    </div>
+                    <p class="teacher-info-notes">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Ab autem consectetur culpa cumque, distinctio
+                        dolor dolore dolorem doloremque ea explicabo facilis nam
+                        nesciunt nisi pariatur perspiciatis porro quis similique
+                        temporibus veniam veritatis? A ab ad, aliquam amet
+                        consequatur cupiditate debitis deserunt doloribus
+                        dolorum earum eius eos minus nostrum odit omnis
+                        perferendis...
+                    </p>
+                    <button type="button" class="toggle-map">toggle map</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
