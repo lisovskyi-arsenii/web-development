@@ -1,7 +1,8 @@
 {
-  "name": "lab01-lisovskyi",
+  "name": "lab02-lisovskyi",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "sass": "sass --watch src/scss/main.scss:src/css/style.css"
   },
