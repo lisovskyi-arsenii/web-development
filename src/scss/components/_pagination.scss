@@ -1,0 +1,29 @@
+@use "../abstracts/variables" as *;
+
+.pagination {
+  margin-top: 33px;
+  padding-left: 20px;
+  font-size: $fs-body;
+  line-height: 20px;
+
+  ul {
+    overflow: hidden;
+  }
+
+  li {
+    float: left;
+    margin-right: 20px;
+  }
+
+  a {
+    color: $color-link;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  [aria-current="page"] {
+    color: $color-text;
+  }
+}

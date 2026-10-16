@@ -1,0 +1,240 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.popup {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  overflow-y: auto;
+  background: $color-overlay;
+
+  &:target {
+    display: flex;
+  }
+}
+
+.popup-backdrop {
+  position: fixed;
+  inset: 0;
+  cursor: default;
+}
+
+.popup-window {
+  position: relative;
+  width: $popup-add-width;
+  max-width: 100%;
+  margin: auto;
+  background: $color-white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.popup-info .popup-window {
+  width: $popup-info-width;
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: $popup-header-height;
+  padding: 0 20px;
+  background: $color-popup-header;
+  color: $color-white;
+
+  h2 {
+    font-size: $fs-popup-title;
+    font-weight: $fw-regular;
+    line-height: 1;
+    text-align: left;
+  }
+}
+
+.popup-close {
+  font-size: 40px;
+  line-height: 1;
+  color: $color-white;
+}
+
+.add-teacher-form {
+  padding: 30px $popup-padding;
+
+  label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: $fs-label;
+    color: $color-label-dark;
+  }
+
+  input:not([type="radio"], [type="color"]),
+  select,
+  textarea {
+    display: block;
+    width: 100%;
+    height: 34px;
+    margin-bottom: 26px;
+    padding: 0 10px;
+    border: 1px solid $color-input-border;
+    background: $color-white;
+    font-size: $fs-label;
+  }
+
+  textarea {
+    height: 128px;
+    padding: 8px 10px;
+    resize: vertical;
+  }
+
+  #teacher-birth {
+    width: calc(50% - 16px);
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 32px;
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.sex-field {
+  overflow: hidden;
+  margin-bottom: 20px;
+
+  legend {
+    float: left;
+    margin-right: 32px;
+    font-size: $fs-label;
+    color: $color-label-dark;
+  }
+
+  label {
+    display: inline;
+    margin: 0 4px 0 0;
+  }
+
+  input {
+    margin: 0 10px 0 0;
+    vertical-align: middle;
+  }
+}
+
+.color-field {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 22px;
+
+  label {
+    margin: 0;
+  }
+
+  input {
+    width: 40px;
+    height: 24px;
+    padding: 0;
+  }
+}
+
+.teacher-info {
+  position: relative;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 0 40px;
+  padding: 16px 20px 24px;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+  }
+
+  &-photo {
+    width: 320px;
+    height: 320px;
+    max-width: 100%;
+    object-fit: cover;
+  }
+
+  &-details {
+    position: relative;
+    font-size: $fs-label;
+
+    p,
+    a {
+      display: block;
+      margin-top: 14px;
+    }
+
+    > a {
+      color: $color-link;
+    }
+
+    p a {
+      color: inherit;
+    }
+  }
+
+  &-name {
+    font-size: 36px;
+    line-height: 1.2;
+  }
+
+  &-star {
+    position: absolute;
+    top: 6px;
+    right: 0;
+    width: $star-size;
+    height: $star-size;
+    opacity: 0.35;
+
+    &.is-active {
+      opacity: 1;
+    }
+  }
+
+  &-initials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: $avatar-border solid $color-avatar-border;
+    border-radius: 50%;
+    font-size: 72px;
+    font-weight: $fw-bold;
+    color: $color-accent;
+  }
+
+  &-subject {
+    margin-top: 30px;
+    font-size: 22px;
+    font-weight: $fw-bold;
+  }
+
+  &-notes {
+    grid-column: 1 / -1;
+    margin-top: 20px;
+    font-size: $fs-label;
+    line-height: 1.45;
+  }
+}
+
+.toggle-map {
+  grid-column: 1 / -1;
+  justify-self: start;
+  margin-top: 14px;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px dotted $color-link;
+  background: none;
+  font-size: $fs-label;
+  color: $color-link;
+}

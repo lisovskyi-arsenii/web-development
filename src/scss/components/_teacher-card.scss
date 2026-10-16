@@ -1,0 +1,97 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.teacher-cards {
+  display: grid;
+  grid-template-columns: repeat($card-columns, 1fr);
+  gap: $card-row-gap 0;
+
+  @include tablet {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include mobile {
+    grid-template-columns: repeat(auto-fill, minmax($avatar-size, 1fr));
+    justify-items: center;
+    gap: 32px 0;
+  }
+}
+
+.teacher-card {
+  width: 100%;
+  text-align: center;
+
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.avatar-container {
+  position: relative;
+  width: $avatar-size;
+  height: $avatar-size;
+  margin: 0 auto;
+}
+
+.teacher-card-profile,
+.teacher-initials {
+  width: $avatar-size;
+  height: $avatar-size;
+  border: $avatar-border solid $color-avatar-border;
+  border-radius: 50%;
+  transition: border-color 0.2s;
+}
+
+.teacher-card-profile {
+  object-fit: cover;
+}
+
+.teacher-initials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: $fs-initials;
+  font-weight: $fw-bold;
+  color: $color-accent;
+}
+
+.teacher-card:hover {
+  .teacher-card-profile,
+  .teacher-initials {
+    border-color: $color-avatar-border-hover;
+  }
+}
+
+.teacher-card-star {
+  position: absolute;
+  top: 10px;
+  left: 125px;
+  width: $star-size;
+  height: $star-size;
+}
+
+.teacher-card-name {
+  width: min-content;
+  max-width: 100%;
+  margin: 18px auto 0;
+  overflow-wrap: break-word;
+  font-size: $fs-card-name;
+  line-height: 30px;
+}
+
+.teacher-card-name a:hover {
+  text-decoration: underline;
+}
+
+.teacher-card-subject {
+  margin-top: 12px;
+  font-size: $fs-subject;
+  line-height: 20px;
+  color: $color-text-muted;
+}
+
+.teacher-card-country {
+  margin-top: 10px;
+  font-size: $fs-country;
+  line-height: 14px;
+}

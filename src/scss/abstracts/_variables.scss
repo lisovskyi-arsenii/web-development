@@ -1,0 +1,80 @@
+$color-accent: #f4523c;
+$color-accent-hover: #f75c48;
+$color-avatar-border: #f8958a;
+$color-avatar-border-hover: #cc4835;
+$color-text: #1a1a1a;
+$color-text-muted: #8c8c8c;
+$color-label: #8a8a8a;
+$color-label-dark: #555;
+$color-divider: #222;
+$color-filter-separator: #999;
+$color-row-stripe: #f8f6fa;
+$color-th-hover: #fafafa;
+$color-link: #159a9f;
+$color-sort-arrow: #1898b5;
+$color-arrow: #7e7e7e;
+$color-arrow-hover: #161616;
+$color-input-border: #767676;
+$color-popup-header: #464648;
+$color-overlay: rgba(0, 0, 0, 0.5);
+$color-page-bg: #fff;
+$color-body-bg: #fcfcfc;
+$color-page-shadow: rgba(0, 0, 0, 0.18);
+$color-white: #fff;
+
+$font-main: "PT Sans", sans-serif;
+$font-logo: "Playfair Display", serif;
+
+$fs-logo: 54px;
+$fs-h2: 40px;
+$fs-nav: 24px;
+$fs-nav-footer: 22px;
+$fs-card-name: 24px;
+$fs-subject: 16px;
+$fs-label: 15.5px;
+$fs-body: 15.5px;
+$fs-th: 20px;
+$fs-country: 11px;
+$fs-initials: 30px;
+$fs-popup-title: 26px;
+
+$fw-regular: 400;
+$fw-bold: 700;
+
+$page-width: 1200px;
+$page-padding: 100px;
+$content-width: $page-width - 2 * $page-padding;
+$divider-width: 500px;
+$section-padding-bottom: 58px;
+
+$search-input-width: 220px;
+$search-input-width-active: 400px;
+$search-height: 42px;
+$search-btn-width: 94px;
+$search-gap: 20px;
+$nav-gap: 43px;
+$add-btn-width: 170px;
+$add-btn-height: 53px;
+
+$filter-height: 36px;
+
+$card-width: 200px;
+$card-columns: 5;
+$card-row-gap: 40px;
+$avatar-size: 150px;
+$avatar-border: 4px;
+$star-size: 32px;
+
+$table-row-height: 36px;
+$table-border: 1px solid $color-divider;
+
+$arrow-width: 20px;
+$arrow-height: 64px;
+
+$popup-add-width: 560px;
+$popup-info-width: 947px;
+$popup-header-height: 63px;
+$popup-padding: 35px;
+
+$breakpoint-tablet: 1024px;
+$breakpoint-mobile: 768px;

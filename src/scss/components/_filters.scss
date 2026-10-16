@@ -1,0 +1,76 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.filter-section {
+  display: flex;
+  align-items: center;
+  height: $filter-height;
+  font-size: $fs-label;
+  color: $color-label;
+
+  @include tablet {
+    flex-wrap: wrap;
+    height: auto;
+    gap: 12px 24px;
+  }
+
+  @include mobile {
+    gap: 12px;
+  }
+
+  > label {
+    &:not(:first-child) {
+      height: $filter-height;
+      margin-left: 21px;
+      padding-left: 20px;
+      border-left: 2px dotted $color-filter-separator;
+      line-height: $filter-height;
+
+      @include tablet {
+        height: auto;
+        margin-left: 0;
+        padding-left: 0;
+        border-left: 0;
+        line-height: inherit;
+      }
+    }
+
+    &[for="only-favorites"] {
+      margin-left: 33px;
+
+      @include tablet {
+        margin-left: 0;
+      }
+    }
+  }
+
+  > label[for="age"],
+  > label[for="region"],
+  > label[for="sex"] {
+    margin-right: 18px;
+  }
+
+  select {
+    height: $filter-height;
+    border: 1px solid $color-input-border;
+    background: $color-white;
+    color: $color-text;
+    font-size: $fs-label;
+  }
+
+  #age {
+    width: 76px;
+  }
+
+  #region {
+    width: 91px;
+  }
+
+  #sex {
+    width: 86px;
+  }
+
+  input[type="checkbox"] {
+    vertical-align: middle;
+  }
+}
