@@ -1,13 +1,16 @@
+import { filter, isMatch, isUndefined, omitBy } from "lodash-es";
+
 export function filterUsers(
   users,
   { country, ageRange, gender, favorite } = {},
 ) {
-  return users.filter(
+  const fields = omitBy({ country, gender, favorite }, isUndefined);
+
+  return filter(
+    users,
     (user) =>
-      (country === undefined || user.country === country) &&
+      isMatch(user, fields) &&
       (ageRange === undefined ||
-        (user.age >= ageRange[0] && user.age <= ageRange[1])) &&
-      (gender === undefined || user.gender === gender) &&
-      (favorite === undefined || user.favorite === favorite),
+        (user.age >= ageRange[0] && user.age <= ageRange[1])),
   );
 }
