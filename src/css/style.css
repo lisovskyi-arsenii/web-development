@@ -333,7 +333,8 @@ footer p:nth-of-type(2) {
 
 .top-header button,
 .add-teacher-btn,
-.add-btn {
+.add-btn,
+.next-btn {
   border: 1px solid #f4523c;
   background: transparent;
   color: #f4523c;
@@ -341,7 +342,8 @@ footer p:nth-of-type(2) {
 }
 .top-header button:hover,
 .add-teacher-btn:hover,
-.add-btn:hover {
+.add-btn:hover,
+.next-btn:hover {
   border-color: #f75c48;
   background: #f75c48;
   color: #fff;
@@ -366,6 +368,19 @@ footer p:nth-of-type(2) {
   height: 62px;
   margin-top: 4px;
   font-size: 28px;
+}
+
+.next-btn {
+  display: block;
+  width: 170px;
+  height: 53px;
+  margin: 24px auto 0;
+  font-size: 22px;
+  cursor: pointer;
+}
+.next-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
 }
 
 .favorites-carousel {
@@ -926,3 +941,5 @@ footer p:nth-of-type(2) {
   font-size: 11px;
   line-height: 14px;
 }
+
+/*# sourceMappingURL=style.css.map */

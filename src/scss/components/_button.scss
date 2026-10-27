@@ -3,7 +3,8 @@
 
 .top-header button,
 .add-teacher-btn,
-.add-btn {
+.add-btn,
+.next-btn {
   border: 1px solid $color-accent;
   background: transparent;
   color: $color-accent;
@@ -34,4 +35,18 @@
   height: 62px;
   margin-top: 4px;
   font-size: 28px;
+}
+
+.next-btn {
+  display: block;
+  width: $add-btn-width;
+  height: $add-btn-height;
+  margin: 24px auto 0;
+  font-size: $fs-nav-footer;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
 }

@@ -4,9 +4,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "sass": "sass --watch src/scss/main.scss:src/css/style.css"
+    "sass": "sass --watch src/scss/main.scss:src/css/style.css",
+    "server": "json-server --watch db.json --port 3001"
   },
   "devDependencies": {
+    "json-server": "0.17.4",
     "sass": "^1.80.0"
   }
 }
