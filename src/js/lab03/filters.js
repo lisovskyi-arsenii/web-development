@@ -1,3 +1,5 @@
+import { filter } from "lodash-es";
+
 import { filterUsers } from "../lab02/task3.js";
 
 export function initFilters(teachers, onChange) {
@@ -20,9 +22,7 @@ export function initFilters(teachers, onChange) {
     });
 
     if (onlyPhoto) {
-      filteredTeachers = filteredTeachers.filter(
-        (teacher) => teacher.picture_large,
-      );
+      filteredTeachers = filter(filteredTeachers, "picture_large");
     }
 
     onChange(filteredTeachers);

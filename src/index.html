@@ -4,7 +4,26 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Teachinder</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@webdatarocks/webdatarocks@1.4.23/webdatarocks.min.css"
+        />
         <link rel="stylesheet" href="css/style.css" />
+        <script type="importmap">
+            {
+                "imports": {
+                    "lodash-es": "https://cdn.jsdelivr.net/npm/lodash-es@4.17.21/+esm",
+                    "dayjs": "https://cdn.jsdelivr.net/npm/dayjs@1.11.13/+esm"
+                }
+            }
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@webdatarocks/webdatarocks@1.4.23/webdatarocks.js"></script>
     </head>
     <body>
         <header>
@@ -93,22 +112,27 @@
 
             <section id="statistics">
                 <h2>Statistics</h2>
-                <table class="statistics-table">
-                    <thead id="statistics-head">
-                        <tr>
-                            <th scope="col" data-sort="full_name">Name</th>
-                            <th scope="col" data-sort="course">Speciality</th>
-                            <th scope="col" data-sort="age">Age</th>
-                            <th scope="col" data-sort="b_date">Date of birth</th>
-                            <th scope="col" data-sort="gender">Gender</th>
-                            <th scope="col" data-sort="country">Nationality</th>
-                        </tr>
-                    </thead>
-                    <tbody id="statistics-body"></tbody>
-                </table>
-                <nav class="pagination" aria-label="Pagination">
-                    <ul></ul>
-                </nav>
+                <div class="statistics-controls">
+                    <label for="chart-field">Teachers by</label>
+                    <select id="chart-field">
+                        <option value="course">Speciality</option>
+                        <option value="country">Country</option>
+                        <option value="gender">Gender</option>
+                    </select>
+                </div>
+                <div class="chart-container">
+                    <canvas id="statistics-chart"></canvas>
+                </div>
+
+                <div class="report-buttons">
+                    <button type="button" class="report-btn" data-report="country">
+                        Report by country
+                    </button>
+                    <button type="button" class="report-btn" data-report="flat">
+                        All teachers
+                    </button>
+                </div>
+                <div id="report"></div>
             </section>
 
             <section id="favorites">
@@ -292,6 +316,6 @@
             </div>
         </div>
 
-        <script type="module" src="./js/lab04/lab04.js"></script>
+        <script type="module" src="./js/lab05/lab05.js"></script>
     </body>
 </html>
