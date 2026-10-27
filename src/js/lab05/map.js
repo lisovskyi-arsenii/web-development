@@ -15,7 +15,7 @@ export async function toggleTeacherMap(teacher) {
     position = await findCityPosition(teacher);
   } catch {}
 
-  if (container.hidden) return;
+  if (container.hidden || map) return;
 
   position ??= [
     Number(teacher.coordinates.latitude),
