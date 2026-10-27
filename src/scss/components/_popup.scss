@@ -12,7 +12,7 @@
   overflow-y: auto;
   background: $color-overlay;
 
-  &:target {
+  &.is-open {
     display: flex;
   }
 }
@@ -195,6 +195,9 @@
     right: 0;
     width: $star-size;
     height: $star-size;
+    padding: 0;
+    border: 0;
+    background: transparent;
     opacity: 0.35;
 
     &.is-active {

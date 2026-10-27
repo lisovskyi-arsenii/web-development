@@ -461,7 +461,7 @@ footer p:nth-of-type(2) {
   }
 }
 .filter-section > label[for=age],
-.filter-section > label[for=region],
+.filter-section > label[for=country],
 .filter-section > label[for=sex] {
   margin-right: 18px;
 }
@@ -475,7 +475,7 @@ footer p:nth-of-type(2) {
 .filter-section #age {
   width: 76px;
 }
-.filter-section #region {
+.filter-section #country {
   width: 91px;
 }
 .filter-section #sex {
@@ -519,7 +519,7 @@ footer p:nth-of-type(2) {
   overflow-y: auto;
   background: rgba(0, 0, 0, 0.5);
 }
-.popup:target {
+.popup.is-open {
   display: flex;
 }
 
@@ -687,6 +687,9 @@ footer p:nth-of-type(2) {
   right: 0;
   width: 32px;
   height: 32px;
+  padding: 0;
+  border: 0;
+  background: transparent;
   opacity: 0.35;
 }
 .teacher-info-star.is-active {
@@ -765,19 +768,22 @@ footer p:nth-of-type(2) {
   }
 }
 .statistics-table th:nth-child(1) {
-  width: 22.6%;
+  width: 20%;
 }
 .statistics-table th:nth-child(2) {
-  width: 24.2%;
+  width: 22%;
 }
 .statistics-table th:nth-child(3) {
-  width: 12.8%;
+  width: 8%;
 }
 .statistics-table th:nth-child(4) {
-  width: 18%;
+  width: 17%;
 }
 .statistics-table th:nth-child(5) {
-  width: 22.4%;
+  width: 12%;
+}
+.statistics-table th:nth-child(6) {
+  width: 21%;
 }
 .statistics-table td {
   height: 36px;
@@ -920,5 +926,3 @@ footer p:nth-of-type(2) {
   font-size: 11px;
   line-height: 14px;
 }
-
-/*# sourceMappingURL=style.css.map */

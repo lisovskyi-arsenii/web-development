@@ -1,4 +1,4 @@
-const SORTABLE_FIELDS = ["full_name", "age", "b_date", "country"];
+const SORTABLE_FIELDS = ["full_name", "age", "b_date", "country", "course", "gender"];
 
 function compareValues(a, b) {
   if (typeof a === "string" && typeof b === "string") {
