@@ -1,7 +1,7 @@
+import { filter, isEmpty, round } from "lodash-es";
+
 export function getPercentage(users, predicate) {
-  if (users.length === 0) return 0;
+  if (isEmpty(users)) return 0;
 
-  const matching = users.filter(predicate).length;
-
-  return Math.round((matching / users.length) * 10000) / 100;
+  return round((filter(users, predicate).length / users.length) * 100, 2);
 }

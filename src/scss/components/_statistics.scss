@@ -1,0 +1,31 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.statistics-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  font-size: $fs-label;
+  color: $color-label;
+}
+
+.chart-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 340px;
+  margin: 0 auto 40px;
+}
+
+.report-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+#report {
+  width: 100%;
+}

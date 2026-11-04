@@ -1,15 +1,9 @@
+import { deburr, includes, isNil, isString, orderBy, toLower } from "lodash-es";
+
 const SORTABLE_FIELDS = ["full_name", "age", "b_date", "country", "course", "gender"];
 
-function compareValues(a, b) {
-  if (typeof a === "string" && typeof b === "string") {
-    return a.localeCompare(b);
-  }
-
-  return a - b;
-}
-
 export function sortUsers(users, field, order = "asc") {
-  if (!SORTABLE_FIELDS.includes(field)) {
+  if (!includes(SORTABLE_FIELDS, field)) {
     throw new Error(
       `Cannot sort by ${field}. Allowed fields: ${SORTABLE_FIELDS.join(", ")}`,
     );
@@ -19,16 +13,10 @@ export function sortUsers(users, field, order = "asc") {
     throw new Error(`Invalid sort order "${order}". Use "asc" or "desc"`);
   }
 
-  const direction = order === "desc" ? -1 : 1;
+  // empty values always go last; text is compared without case and accents
+  const isEmptyValue = (user) => isNil(user[field]);
+  const sortValue = (user) =>
+    isString(user[field]) ? deburr(toLower(user[field])) : user[field];
 
-  return [...users].sort((userA, userB) => {
-    const a = userA[field];
-    const b = userB[field];
-
-    if (a == null && b == null) return 0;
-    if (a == null) return 1;
-    if (b == null) return -1;
-
-    return compareValues(a, b) * direction;
-  });
+  return orderBy(users, [isEmptyValue, sortValue], ["asc", order]);
 }

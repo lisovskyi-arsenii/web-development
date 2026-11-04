@@ -1,3 +1,5 @@
+import { find, isString, padStart, random, sample, toLower, trim, upperFirst } from "lodash-es";
+
 const courses = [
   "Mathematics",
   "Physics",
@@ -14,27 +16,24 @@ const courses = [
 ];
 
 export function capitalize(str) {
-  if (typeof str !== "string" || str.length === 0) return str;
-  return str.charAt(0).toUpperCase() + str.slice(1);
+  return isString(str) ? upperFirst(str) : str;
 }
 
 export function getRandomInt(max) {
-  return Math.floor(Math.random() * max);
+  return random(max - 1);
 }
 
 export function getRandomColor() {
-  const r = getRandomInt(256).toString(16).padStart(2, "0");
-  const g = getRandomInt(256).toString(16).padStart(2, "0");
-  const b = getRandomInt(256).toString(16).padStart(2, "0");
+  const channel = () => padStart(getRandomInt(256).toString(16), 2, "0");
 
-  return `#${r}${g}${b}`;
+  return `#${channel()}${channel()}${channel()}`;
 }
 
 export function getRandomCourse() {
-  return courses[getRandomInt(courses.length)];
+  return sample(courses);
 }
 
 export function findCourse(course) {
-  if (typeof course !== "string") return undefined;
-  return courses.find((c) => c.toLowerCase() === course.trim().toLowerCase());
+  if (!isString(course)) return undefined;
+  return find(courses, (c) => toLower(c) === toLower(trim(course)));
 }

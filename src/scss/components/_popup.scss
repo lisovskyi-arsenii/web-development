@@ -222,6 +222,12 @@
     font-weight: $fw-bold;
   }
 
+  &-map {
+    grid-column: 1 / -1;
+    height: 280px;
+    margin-top: 14px;
+  }
+
   &-notes {
     grid-column: 1 / -1;
     margin-top: 20px;

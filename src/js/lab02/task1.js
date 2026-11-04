@@ -1,3 +1,4 @@
+import { assign, defaultTo, isNil, keyBy, map, omitBy, values } from "lodash-es";
 import {
   capitalize,
   getRandomColor,
@@ -6,7 +7,7 @@ import {
 } from "./utility.js";
 
 export function createNewObject(users) {
-  return users.map((user) => {
+  return map(users, (user) => {
     const { title, first, last } = user.name;
     const { city, state, country, postcode, coordinates, timezone } =
       user.location;
@@ -39,7 +40,7 @@ export function createNewObject(users) {
 }
 
 export function mapToCorrectFormat(additionalUsers) {
-  return additionalUsers.map((user) => {
+  return map(additionalUsers, (user) => {
     const {
       gender,
       title,
@@ -57,10 +58,10 @@ export function mapToCorrectFormat(additionalUsers) {
       id,
     } = user;
 
-    const favorite = user.favorite ?? false;
-    const course = findCourse(user.course) ?? getRandomCourse();
-    const bg_color = user.bg_color ?? getRandomColor();
-    const note = user.note ?? "";
+    const favorite = defaultTo(user.favorite, false);
+    const course = defaultTo(findCourse(user.course), getRandomCourse());
+    const bg_color = defaultTo(user.bg_color, getRandomColor());
+    const note = defaultTo(user.note, "");
 
     return {
       gender: capitalize(gender),
@@ -88,30 +89,17 @@ export function mapToCorrectFormat(additionalUsers) {
 }
 
 export function mergeUsers(users, additionalUsers) {
-  const map = new Map();
+  const usersByName = keyBy(users, "full_name");
 
-  for (const user of users) {
-    map.set(user.full_name, user);
-  }
+  additionalUsers.forEach((user) => {
+    const existingUser = usersByName[user.full_name];
 
-  for (const user of additionalUsers) {
-    const existingUser = map.get(user.full_name);
-    if (existingUser) {
-      const merged = { ...existingUser };
+    usersByName[user.full_name] = existingUser
+      ? assign({}, existingUser, omitBy(user, isNil))
+      : user;
+  });
 
-      for (const [key, value] of Object.entries(user)) {
-        if (value !== null && value !== undefined) {
-          merged[key] = value;
-        }
-      }
-
-      map.set(user.full_name, merged);
-    } else {
-      map.set(user.full_name, user);
-    }
-  }
-
-  return Array.from(map.values());
+  return values(usersByName);
 }
 
 export function getFormattedUsers(randomUsers, extraUsers) {

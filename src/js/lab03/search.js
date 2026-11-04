@@ -1,3 +1,5 @@
+import { filter, includes, toLower, toNumber, trim } from "lodash-es";
+
 export function initSearch(teachers, onChange) {
   const form = document.querySelector('form[role="search"]');
   const input = form.querySelector('input[type="search"]');
@@ -5,14 +7,15 @@ export function initSearch(teachers, onChange) {
 
   function applySearch(visibleTeachers = filteredTeachers) {
     filteredTeachers = visibleTeachers;
-    const query = input.value.trim().toLowerCase();
+    const query = toLower(trim(input.value));
 
     const results = query
-      ? filteredTeachers.filter(
+      ? filter(
+          filteredTeachers,
           (teacher) =>
-            teacher.full_name.toLowerCase().includes(query) ||
-            (teacher.note ?? "").toLowerCase().includes(query) ||
-            teacher.age === Number(query),
+            includes(toLower(teacher.full_name), query) ||
+            includes(toLower(teacher.note), query) ||
+            teacher.age === toNumber(query),
         )
       : filteredTeachers;
 

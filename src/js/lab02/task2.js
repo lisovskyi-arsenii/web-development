@@ -1,3 +1,5 @@
+import { isEmpty, isNumber, isString, upperFirst } from "lodash-es";
+
 const PHONE_FORMATS = {
   parenthesized: /^\(\d{3}\)-\d{3}-\d{4}$/, // (720)-981-1014
   threeThreeFour: /^\d{3}-\d{3}-\d{4}$/, // 636-857-3801
@@ -25,14 +27,11 @@ const PHONE_PATTERNS = new Map([
 const GENERIC_PHONE = /^\+?[\d\s\-()]{6,20}$/;
 
 function isUpperCase(str) {
-  if (str.length > 0 && str.charAt(0) === str.charAt(0).toUpperCase()) {
-    return true;
-  }
-  return false;
+  return !isEmpty(str) && upperFirst(str) === str;
 }
 
 function assertString(value, fieldName) {
-  if (typeof value !== "string") {
+  if (!isString(value)) {
     throw new Error(`User's ${fieldName} is not 'string' type`);
   }
 }
@@ -40,15 +39,13 @@ function assertString(value, fieldName) {
 function assertStringWithUpperCase(value, fieldName) {
   assertString(value, fieldName);
 
-  if (value.length > 0) {
-    if (!isUpperCase(value)) {
-      throw new Error(`User's ${fieldName} is not starting with uppercase`);
-    }
+  if (!isEmpty(value) && !isUpperCase(value)) {
+    throw new Error(`User's ${fieldName} is not starting with uppercase`);
   }
 }
 
 function assertNumber(value, fieldName) {
-  if (typeof value !== "number") {
+  if (!isNumber(value)) {
     throw new Error(`User's ${fieldName} is not a number`);
   }
 }
