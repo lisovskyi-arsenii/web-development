@@ -1,5 +1,5 @@
 const VALID_LOGIN = "arsenii3";
-const VALID_PASSWORD = "validpassword";
+const VALID_PASSWORD = "arsenii3";
 
 const KYIV_COORDS = { latitude: 50.45, longitude: 30.52 };
 const FORECAST_DAYS = 5;
